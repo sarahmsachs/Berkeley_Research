@@ -183,10 +183,10 @@ function GetPopupFormEdit(anno) {
   }
   else {
   //html_str += '<input type="button" value="Edit Scribbles" title="Press this button if you wish to update the segmentation." onclick="javascript:EditBubbleEditScribble();" />';  
-    html_str += '<input type="button" value="Edit Scribbles" title="Press this button if you wish to update the segmentation." onclick="EditBubbleEditScribble();" />';  
-  }
-  /*************************************************************/
-  /*************************************************************/
+  html_str += '<input type="button" value="Edit Scribbles" title="Press this button if you wish to update the segmentation." onclick="EditBubbleEditScribble();" />';  
+}
+/*************************************************************/
+/*************************************************************/
 
   // Delete button:
   html_str += '<input type="button" value="Delete" title="Press this button if you wish to delete the polygon." onclick="main_handler.EditBubbleDeleteButton();" tabindex="0" />';
@@ -433,12 +433,22 @@ function HTMLimageDecadeBox(imageDecade) {
     html_decade += '<input type="radio" name="rbimageDecade" id="rbimageDecade" value="2000s"  onclick="document.getElementById(\'imageDecade\').value=\'2000s\';" />2000s';
     html_decade += '<input type="radio" name="rbimageDecade" id="rbimageDecade" value="2010s"  checked="yes" onclick="document.getElementById(\'imageDecade\').value=\'2010s\';" />2010s';
   }
- 
- html_decade += '<br />';
-
- return html_decade;
+   return html_decade;
 }
 
+/*
+function HTMLimageDecadeBox(imageDecade) {
+  var html_decade="";
+  html_decade += 'In what decade do you think this image was taken? <input type="hidden" name="imageDecade" id="imageDecade" value="'+imageDecade+'"/>';
+  <select id="decadeSelect">
+  <option value="1900">1900s</option>
+  <option value= "1910">1910s</option>
+  </select>
+  html_decade += document.getElementById("decadeSelect").value;
+  html_decade += '<br />';
+  return html_decade;
+}
+*/
 
 // ****************************
 // ATTRIBUTES:
@@ -466,6 +476,7 @@ function HTMLimageQualityBox(imageQuality) {
     html_str += '<input type="radio" name="rbimageQuality" id="rbimageQuality" value="yes"  onclick="document.getElementById(\'imageQuality\').value=\'yes\';" />yes';
     html_str += '<input type="radio" name="rbimageQuality" id="rbimageQuality" value="no" checked="yes"  onclick="document.getElementById(\'imageQuality\').value=\'no\';" />no';
   }
+
   html_str += '<br />';
   
   return html_str;
