@@ -61,7 +61,8 @@ function LoadAnnotationList() {
             
             // show object name:
             html_str += '<a class="objectListLink"  id="Link' + ii + '" '+
-            'href="javascript:main_handler.AnnotationLinkClick('+ii+');" '+
+            //'href="javascript:main_handler.AnnotationLinkClick('+ii+');" '+
+            'href="main_handler.AnnotationLinkClick('+ii+');" '+
             'onmouseover="main_handler.AnnotationLinkMouseOver('+ii+');" ' +
             'onmouseout="main_handler.AnnotationLinkMouseOut();" ';
             

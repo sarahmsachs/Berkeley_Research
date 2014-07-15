@@ -243,7 +243,7 @@ function handler() {
       
       var re = /[a-zA-Z0-9]/;
       if(!re.test(nn)) {
-	alert('Please enter an object name');
+	alert('Please enter what aspect of the object you selected');
 	return;
       }
       

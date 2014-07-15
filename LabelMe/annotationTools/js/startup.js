@@ -182,7 +182,7 @@ function FinishStartup() {
 
   // Add actions:
   console.log('LabelMe: setting actions');
-  if($('#img_url')) $('#img_url').attr('onclick','javascript:console.log(\'bobo\');location.href=main_image.GetFileInfo().GetImagePath();');
+  /*if($('#img_url')) $('#img_url').attr('onclick','javascript:console.log(\'bobo\');location.href=main_image.GetFileInfo().GetImagePath();');
   $('#changeuser').attr("onclick","javascript:show_enterUserNameDIV(); return false;");
   $('#userEnter').attr("onkeyup","javascript:var c; if(event.keyCode)c=event.keyCode; if(event.which)c=event.which; if(c==13 || c==27) changeAndDisplayUserName(c);");
   $('#xml_url').attr("onclick","javascript:GetXMLFile();");
@@ -202,6 +202,28 @@ function FinishStartup() {
   $('#query_canvas_div').attr("onmouseup","javascript:event.preventDefault();");
   $('#query_canvas_div').attr("oncontextmenu","javascript:return false;");
 
+
+*/
+
+if($('#img_url')) $('#img_url').attr('onclick','console.log(\'bobo\');location.href=main_image.GetFileInfo().GetImagePath();');
+  $('#changeuser').attr("onclick","show_enterUserNameDIV(); return false;");
+  $('#userEnter').attr("onkeyup","var c; if(event.keyCode)c=event.keyCode; if(event.which)c=event.which; if(c==13 || c==27) changeAndDisplayUserName(c);");
+  $('#xml_url').attr("onclick","GetXMLFile();");
+  $('#nextImage').attr("onclick","ShowNextImage()");
+  $('#zoomin').attr("onclick","main_image.Zoom(1.15)");
+  $('#zoomout').attr("onclick","main_image.Zoom(1.0/1.15)");
+  $('#fit').attr("onclick","main_image.Zoom('fitted')");
+  $('#erase').attr("onclick","main_handler.EraseSegmentButton()");
+  $('#submitform').attr("action","loadXMLDoc();");
+  $('#myCanvas_bg_div').attr("onmousedown","StartDrawEvent(event);return false;");
+  $('#myCanvas_bg_div').attr("oncontextmenu","return false;");
+  $('#myCanvas_bg_div').attr("onmouseover","unselectObjects();");
+  $('#select_canvas_div').attr("oncontextmenu","return false;");
+  $('#draw_canvas_div').attr("onmousedown","DrawCanvasMouseDown(event);return false;");
+  $('#draw_canvas_div').attr("oncontextmenu","return false;");
+  $('#query_canvas_div').attr("onmousedown","event.preventDefault();WaitForInput();return false;");
+  $('#query_canvas_div').attr("onmouseup","event.preventDefault();");
+  $('#query_canvas_div').attr("oncontextmenu","return false;");
   // Initialize the username:
   initUserName();
 

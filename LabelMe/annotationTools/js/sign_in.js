@@ -8,7 +8,7 @@ function initUserName() {
     // The first time we get the username will give preference to the username passed
     //   in the URL as it might come from the LabelMe browser.
     username = getQueryVariable("username");
-
+    //got rid of "" null
     if (username=="null") {username = "anonymous";}
 
     else if (username.length==0) {
