@@ -93,15 +93,17 @@ function StopEditEvent() {
 }
 
 var adjust_objEnter = '';
-var adjust_attributes;
+//var adjust_attributes;
 var adjust_imageQuality;
+var adjust_imageDecade;
 
 function AdjustPolygonButton() {
   // We need to capture the data before closing the bubble 
   // (THIS IS AN UGLY HACK)
   adjust_objEnter = document.getElementById('objEnter').value;
-  adjust_attributes = document.getElementById('attributes').value;
+  //adjust_attributes = document.getElementById('attributes').value;
   adjust_imageQuality = document.getElementById('imageQuality').value;
+  adjust_imageDecade = document.getElementById('imageDecade').value;
   
   // Close the edit popup bubble:
   CloseEditPopup();

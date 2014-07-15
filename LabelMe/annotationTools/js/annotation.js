@@ -150,6 +150,10 @@ function annotation(anno_id) {
     this.GetImageQuality = function() {
         return $(LM_xml).children("annotation").children("object").eq(this.anno_id).children("imageQuality").text();
     };
+
+    this.GetImageDecade = function() {
+        return $(LM_xml).children("annotation").children("object").eq(this.anno_id).children("imageDecade").text();
+    };
     
     this.GetAttributes = function() {
         return $(LM_xml).children("annotation").children("object").eq(this.anno_id).children("attributes").text();

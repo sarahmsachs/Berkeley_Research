@@ -119,10 +119,11 @@ function GetPopupFormDraw() {
   html_str += HTMLobjectBox("");
   
   if(use_attributes) {
-    html_str += HTMLimageQualityBox("");
     html_str += HTMLimageDecadeBox("");
-    html_str += "<b>Enter attributes</b><br />";
-    html_str += HTMLattributesBox("");
+    html_str += HTMLimageQualityBox("");
+    
+    //html_str += "<b>Enter attributes</b><br />";
+    //html_str += HTMLattributesBox("");
   }
   
   if(use_parts) {
@@ -148,16 +149,16 @@ function GetPopupFormEdit(anno) {
   var obj_name = anno.GetObjName();
   if(obj_name=="") obj_name = "?";
   //var attributes = anno.GetAttributes();
-  var imageQuality = anno.GetimageQuality();
   var imageDecade = anno.GetimageDecade();
+  var imageQuality = anno.GetimageQuality();
   var parts = anno.GetParts();
   
   html_str = "<b>What aspect of the photograph did you select?</b><br />";
   html_str += HTMLobjectBox(obj_name);
   
   if(use_attributes) {
-    html_str += HTMLimageQualityBox(imageQuality);
     html_str += HTMLimageDecadeBox(imageDecade);
+    html_str += HTMLimageQualityBox(imageQuality);
     //html_str += "<b>Enter attributes</b><br />";
     //html_str += HTMLattributesBox(attributes);
   }
@@ -469,9 +470,9 @@ function HTMLimageQualityBox(imageQuality) {
 }
 
 // Boxes to enter attributes
-function HTMLattributesBox(attList) {    
-  return '<textarea name="attributes" id="attributes" type="text" style="width:220px; height:3em;" tabindex="0" title="Enter a comma separated list of attributes, adjectives or other object properties">'+attList+'</textarea>';
-}
+//function HTMLattributesBox(attList) {    
+ // return '<textarea name="attributes" id="attributes" type="text" style="width:220px; height:3em;" tabindex="0" title="Enter a comma separated list of attributes, adjectives or other object properties">'+attList+'</textarea>';
+//}
 
 
 // ****************************

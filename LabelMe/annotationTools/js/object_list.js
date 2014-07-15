@@ -75,7 +75,7 @@ function LoadAnnotationList() {
                 html_str += '>';
             
             if(AllAnnotations[ii].GetObjName().length==0 && !main_draw_canvas.Peek()) {
-                html_str += '<i>[ Please enter name ]</i>';
+                html_str += '<i>[ What aspect of the photograph did you select? ]</i>';
             }
             else {
                 html_str += AllAnnotations[ii].GetObjName();

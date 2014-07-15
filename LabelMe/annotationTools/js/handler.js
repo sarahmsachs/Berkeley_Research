@@ -42,13 +42,16 @@ function handler() {
       }
       
       if (use_attributes) {
-	// occlusion field
+	// imageQuality field
 	if (document.getElementById('imageQuality')) new_imageQuality = RemoveSpecialChars(document.getElementById('imageQuality').value);
 	else new_imageQuality = RemoveSpecialChars(adjust_imageQuality);
+
+  if (document.getElementById('imageDecade')) new_imageDecade = RemoveSpecialChars(document.getElementById('imageDecade').value);
+  else new_imageDecade = RemoveSpecialChars(adjust_imageDecade);
 	
 	// attributes field
-	if(document.getElementById('attributes')) new_attributes = RemoveSpecialChars(document.getElementById('attributes').value);
-	else new_attributes = RemoveSpecialChars(adjust_attributes);
+	//if(document.getElementById('attributes')) new_attributes = RemoveSpecialChars(document.getElementById('attributes').value);
+	//else new_attributes = RemoveSpecialChars(adjust_attributes);
       }
       
       StopEditEvent();
@@ -68,11 +71,14 @@ function handler() {
       if(curr_obj.children("automatic").length > 0) curr_obj.children("automatic").text("0");
       
       // Insert attributes (and create field if it is not there):
-      if(curr_obj.children("attributes").length>0) curr_obj.children("attributes").text(new_attributes);
-      else curr_obj.append("<attributes>" + new_attributes + "</attributes>");
+      //if(curr_obj.children("attributes").length>0) curr_obj.children("attributes").text(new_attributes);
+      //else curr_obj.append("<attributes>" + new_attributes + "</attributes>");
         
       if(curr_obj.children("imageQuality").length>0) curr_obj.children("imageQuality").text(new_imageQuality);
       else curr_obj.append("<imageQuality>" + new_imageQuality + "</imageQuality>");
+
+      if(curr_obj.children("imageDecade").length>0) curr_obj.children("imageDecade").text(new_imageDecade);
+      else curr_obj.append("<imageDecade>" + new_imageDecade + "</imageDecade>");
         
       if(editedControlPoints) {
 	for(var jj=0; jj < AllAnnotations[obj_ndx].GetPtsX().length; jj++) {
@@ -207,14 +213,17 @@ function handler() {
       var anno;
       
       // If the attributes are active, read the fields.
-      if (use_attributes) {
+     if (use_attributes) {
 	// get attributes (is the field exists)
-	if(document.getElementById('attributes')) new_attributes = RemoveSpecialChars(document.getElementById('attributes').value);
-	else new_attributes = "";
+	//if(document.getElementById('attributes')) new_attributes = RemoveSpecialChars(document.getElementById('attributes').value);
+	//else new_attributes = "";
 	
 	// get occlusion field (is the field exists)
 	if (document.getElementById('imageQuality')) new_imageQuality = RemoveSpecialChars(document.getElementById('imageQuality').value);
 	else new_imageQuality = "";
+
+  if (document.getElementById('imageDecade')) new_imageDecade = RemoveSpecialChars(document.getElementById('imageDecade').value);
+  else new_imageDecade = "";
       }
       
       if((object_choices!='...') && (object_choices.length==1)) {
@@ -260,9 +269,10 @@ function handler() {
       html_str += '<verified>0</verified>';
       if(use_attributes) {
 	html_str += '<imageQuality>' + new_imageQuality + '</imageQuality>';
-	html_str += '<attributes>' + new_attributes + '</attributes>';
+  html_str += '<imageDecade>' + new_imageDecade + '</imageDecade>';
+	//html_str += '<attributes>' + new_attributes + '</attributes>';
       }
-      html_str += '<parts><hasparts></hasparts><ispartof></ispartof></parts>';
+      //html_str += '<parts><hasparts></hasparts><ispartof></ispartof></parts>';
       var ts = GetTimeStamp();
       if(ts.length==20) html_str += '<date>' + ts + '</date>';
       html_str += '<id>' + obj_ndx + '</id>';
